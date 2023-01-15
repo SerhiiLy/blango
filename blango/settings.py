@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from django.conf.urls.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-tiwa$ykm1nmbihc1^5huh@*asimy3c)%*dup*9^t9jl2$*e_!i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'version-parody-8000.codio.io']
 
 
 # Application definition
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'versatileimagefield',
+
 ]
 
 MIDDLEWARE = [
@@ -70,6 +73,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blango.wsgi.application'
 
+# Media setup
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
